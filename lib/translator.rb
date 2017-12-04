@@ -6,6 +6,8 @@ def load_library(file)
     english, japanese = array
     library["emoticon"][english] = japanese
     library["meaning"][japanese] = definition
+  end
+  return library
 end
 
 def get_japanese_emoticon(file, emoticon)
@@ -25,5 +27,5 @@ def get_english_meaning(file, emoticon)
     result
   else
     puts "Try again"
-  end  
+  end
 end

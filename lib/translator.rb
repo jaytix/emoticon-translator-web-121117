@@ -13,12 +13,16 @@ def get_japanese_emoticon(file, emoticon)
   result = library["meaning"][emoticon]
   if result
     result
-  else puts "Try again"
+  else 
+    puts "Try again"
   end
 end
 
 def get_english_meaning(file, emoticon)
   library = load_library(file)
   result = library["meaning"][emoticon]
-  
+  if result
+    result
+  else
+    puts "Try again"   
 end

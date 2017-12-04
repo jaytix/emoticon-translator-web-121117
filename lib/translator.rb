@@ -1,18 +1,18 @@
 require 'yaml'
 
 def load_library(file)
-  library = {"meaning" => {}, "emoticon" => {}}
+  library = {"get_emoticon" => {}, "get_meaning" => {}}
   YAML.load_file(file).each do |definition ,array|
     english, japanese = array
-    library["emoticon"][english] = japanese
-    library["meaning"][japanese] = definition
+    library["get_emoticon"][english] = japanese
+    library["get_meaning"][japanese] = definition
   end
   library
 end
 
 def get_japanese_emoticon(file, emoticon)
   library = load_library(file)
-  result = library["meaning"][emoticon]
+  result = library["get_meaning"][emoticon]
   if result
     result
   else
@@ -22,7 +22,7 @@ end
 
 def get_english_meaning(file, emoticon)
   library = load_library(file)
-  result = library["meaning"][emoticon]
+  result = library["get_meaning"][emoticon]
   if result
     result
   else
